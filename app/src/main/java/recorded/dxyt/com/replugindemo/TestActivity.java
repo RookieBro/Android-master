@@ -18,7 +18,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-public class MainActivity extends AppCompatActivity {
+public class  TestActivity extends AppCompatActivity {
     Button btn, installs;
 
 
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         installs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final ProgressDialog pd = ProgressDialog.show(MainActivity.this, "Installing...", "Please wait...", true, true);
+                final ProgressDialog pd = ProgressDialog.show(TestActivity.this, "Installing...", "Please wait...", true, true);
                 // FIXME: 仅用于安装流程演示 2017/7/24
                 new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 // 若没有安装，则直接提示“错误”
                 // TODO 将来把回调串联上
                 if (RePlugin.isPluginInstalled("demo2")) {
-                    RePlugin.startActivity(MainActivity.this, RePlugin.createIntent("demo2", "recorded.dxyt.com.demo2.MainActivity"));
+                    RePlugin.startActivity(TestActivity.this, RePlugin.createIntent("demo2", "recorded.dxyt.com.demo2.MainActivity"));
                 } else {
-                    Toast.makeText(MainActivity.this, "You must install demo3 first!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TestActivity.this, "You must install demo3 first!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -83,9 +83,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (info != null) {
-            RePlugin.startActivity(MainActivity.this, RePlugin.createIntent(info.getName(), "recorded.dxyt.com.demo2.MainActivity"));
+            RePlugin.startActivity(TestActivity.this, RePlugin.createIntent(info.getName(), "recorded.dxyt.com.demo2.MainActivity"));
         } else {
-            Toast.makeText(MainActivity.this, "安装失败！", Toast.LENGTH_SHORT).show();
+            Toast.makeText(TestActivity.this, "安装失败！", Toast.LENGTH_SHORT).show();
         }
     }
 
