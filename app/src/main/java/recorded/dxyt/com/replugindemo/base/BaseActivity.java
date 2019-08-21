@@ -2,11 +2,12 @@ package recorded.dxyt.com.replugindemo.base;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-public abstract class BaseActivity extends Activity implements View.OnClickListener {
+public abstract class BaseActivity extends FragmentActivity implements View.OnClickListener {
     public static final String TAG="DEMOTEST";
     
     @Override

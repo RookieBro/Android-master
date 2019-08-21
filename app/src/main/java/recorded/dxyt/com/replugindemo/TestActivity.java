@@ -25,7 +25,7 @@ public class  TestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test);
         btn = findViewById(R.id.on_click);
         installs = findViewById(R.id.install);
         installs.setOnClickListener(new View.OnClickListener() {
